@@ -19,11 +19,22 @@ def collatz(number):
     return collatz
 
 
-for num in range(10):
-    collatz(num)
+# for num in range(10):
+#     collatz(num)
 
 """
 Then write a program that lets the user type in an integer
-and that keeps calling collatz() on that number until the function returns the value 1. 
-(Amazingly enough, this sequence actually works for any integer—sooner or later, using this sequence, you’ll arrive at 1! Even mathematicians aren’t sure why. Your program is exploring what’s called the Collatz sequence, sometimes called “the simplest impossible math problem.”)
+and that keeps calling collatz() on that number until the function returns the value 1
 """
+
+
+def collatzSequenceFinder():
+    """asks for user input
+    stops when a collatz value of 1 is found"""
+    start = int(input("please type the seed number to start your collatz search\n"))
+    result = start
+    while result != 1:
+        result = collatz(result)
+
+
+# collatzSequenceFinder()
