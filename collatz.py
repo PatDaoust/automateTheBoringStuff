@@ -31,14 +31,16 @@ and that keeps calling collatz() on that number until the function returns the v
 def collatzSequenceFinder():
     """asks for user input
     stops when a collatz value of 1 is found"""
-    start = (input("please type the seed number to start your collatz search\n"))
-    try:
-        start = int(start)
-    except ValueError:
-        print("I'm sorry, that doesn't seem to be a valid number")
+    start = None
+    while not isinstance(start, int):
+        start = (input("please type the seed number to start your collatz search\n"))
+        try:
+            start = int(start)
+        except ValueError:
+            print("I'm sorry, that doesn't seem to be a valid number")
     result = start
     while result != 1:
         result = collatz(result)
 
 
-# collatzSequenceFinder()
+collatzSequenceFinder()
