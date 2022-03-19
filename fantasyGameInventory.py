@@ -86,6 +86,7 @@ def addToInventory(inventory_dict, loot_list):
     """assumes inventory_dict s a dictonary with string keys and numeric values
     assumes loot_list is a list of strings
     returns a dict, an updated inventory including the loot
+    does not mutate the original inventory_dict
     warning: strings from loot_list and inventory_dict must match exactly"""
     new_inventory = dict(inventory_dict)
     for item in loot_list:
