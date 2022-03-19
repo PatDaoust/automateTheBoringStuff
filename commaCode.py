@@ -21,8 +21,12 @@ But your function should be able to work with any list value passed to it.
 def commaCode(a_list):
     """assumes a_list is a list of strings
     returns a string, the contents of a_list with ", " between items"""
-    pass
+    result_str = ""
+    for i in range(len(a_list)-1):
+        result_str += a_list[i] + ", "
+    result_str += "and " + a_list[-1]
+    return result_str
 
 
 spam = ['apples', 'bananas', 'tofu', 'cats']
-commaCode(spam)
+print(commaCode(spam))
