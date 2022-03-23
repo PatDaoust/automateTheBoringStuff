@@ -20,7 +20,19 @@ def tablePrinter(list_list):
     where the inner lists are all of the same lenght
     prints list_list in table for
     returns None"""
-    pass
+    # find max lenght items and add padding
+    for i in range(len(list_list)):
+        max_len = 0
+        for outer_list in list_list:
+            if len(outer_list[i]) > max_len:
+                max_len = len(outer_list[0])
+        for outer_list in list_list:
+            len_dif = max_len - len(outer_list[i])
+            if len_dif > 0:
+                outer_list[i] = (" " * len_dif) + outer_list[i]
+    # print table
+    for row in list_list:
+        print(row)
 
 
 if __name__ == "__main__":
