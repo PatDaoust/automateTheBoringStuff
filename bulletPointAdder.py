@@ -13,7 +13,14 @@ def bulletPointAdder():
     pastes this new text to the clipboard
     returns None
     """
-    pass
+    text = pyperclip.paste()
+    text_list = text.split("\n")
+    mod_list = []
+    for sub_text in text_list:
+        sub_text = "* " + sub_text
+        mod_list.append(sub_text)
+    mod_text = "".join(mod_list)
+    pyperclip.copy(mod_text)
 
 
 if __name__ == "__main__":
