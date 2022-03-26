@@ -40,11 +40,11 @@ def extractPhoneEmail():
     )''', re.VERBOSE)
     phone_nums = phone_re.findall(text)
     email_re = re.compile(r"""(
-    [a-zA-Z0-9._]+  # username
-    @               # @
-    [a-zA-Z0-9._]+  # server
-    \.              # .
-    [a-zA-Z0-9._]+  # domaine
+    [a-zA-Z0-9._]+      # username
+    @                   # @
+    [a-zA-Z0-9._]+      # server
+    \.                  # .
+    [a-zA-Z0-9._]{2,4}  # domaine
     )""", re.VERBOSE)
     emails = email_re.findall(text)
 
