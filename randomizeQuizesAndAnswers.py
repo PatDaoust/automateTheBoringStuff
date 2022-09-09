@@ -23,14 +23,39 @@ Writes the quizzes to 35 text files.
 Writes the answer keys to 35 text files.
 """
 
+"""
+potential_questions format: dict()
+values = string = question
+value = string = answer
+
+
+quiz format
+header
+Question 1: key
+a. rand
+b. value
+c. rand
+d. rand
+
+x questions_per_quiz
+
+answer key format
+Question 1. a.
+
+"""
+
 
 def randomizeQuizesAndAnswers(potential_questions,
                               questions_per_quiz,
                               quiz_num,
                               destination_folder):
-    """assumes potential_questions
-    assumes questions_per_quiz
-    assumes quiz_num
+    """assumes potential_questions is a dict, with keys representing the questions
+    and values representing correct answers
+    assumes questions_per_quiz is an int, representing the number of questions in a quiz
+    assumes quiz_num is an int, representing the number of quizes to be generated
+    assumes destination_folder is a string, representing the path to store the generated quizzes
     returns None
     creates 2*quiz_num of files"""
+    # test that questions_per_quiz > len(potential_questions)
+    # TODO outline plan
     pass
